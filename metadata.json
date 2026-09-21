@@ -1,0 +1,6 @@
+{
+  "name": "Server en general | Los Daddys",
+  "description": "Página oficial de bienvenida a la nueva era de Server en general, powered by Los Daddys. Una comunidad de amistad, directos y gaming.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

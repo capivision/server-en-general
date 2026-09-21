@@ -1,0 +1,69 @@
+{
+  "entities": {
+    "events": {
+      "title": "Events",
+      "description": "Weekly competitions and mini-games hosted on Los Daddys Live",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "gameType": { "type": "string", "enum": ["trivia", "rapid", "memory", "reaction", "object_hunt", "roulette", "skill", "custom"] },
+        "status": { "type": "string", "enum": ["active", "upcoming", "ended"] },
+        "prizePool": { "type": "string" },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "rules": { "type": "string" },
+        "gameData": { "type": "object" },
+        "winnersList": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "gameType", "status"]
+    },
+    "participations": {
+      "title": "Participations",
+      "description": "User scores and entries for live events",
+      "type": "object",
+      "properties": {
+        "eventId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "score": { "type": "number" },
+        "completionTimeMs": { "type": "number" },
+        "timestamp": { "type": "string" },
+        "details": { "type": "object" }
+      },
+      "required": ["eventId", "userName", "score"]
+    },
+    "hall_of_fame": {
+      "title": "Hall of Fame",
+      "description": "Official records of event champions and top winners",
+      "type": "object",
+      "properties": {
+        "eventId": { "type": "string" },
+        "eventTitle": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "score": { "type": "number" },
+        "rank": { "type": "number" },
+        "reward": { "type": "string" },
+        "victoryDate": { "type": "string" },
+        "badge": { "type": "string" }
+      },
+      "required": ["eventTitle", "userName", "rank"]
+    },
+    "leaderboard": {
+      "title": "Event Leaderboard",
+      "description": "Aggregate scores and wins per user across all events",
+      "type": "object",
+      "properties": {
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "totalPoints": { "type": "number" },
+        "totalWins": { "type": "number" },
+        "eventsPlayed": { "type": "number" },
+        "lastActive": { "type": "string" }
+      },
+      "required": ["userName", "totalPoints"]
+    }
+  }
+}
